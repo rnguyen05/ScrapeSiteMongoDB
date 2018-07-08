@@ -1,30 +1,51 @@
-// Require mongoose
-var mongoose = require("mongoose");
-// Create Schema class
+//Require Mongoose
+var mongoose = require('mongoose');
+
+//Require the connection
+var db = require("../config/connection");
+
+// Create a Schema Class
 var Schema = mongoose.Schema;
 
-// Create article schema
+//Create Article schema
 var ArticleSchema = new Schema({
-  // title is a required string
-  title: {
+  //Title is a required string
+  title: 
+  {
     type: String,
-    required: true
+    required: true,
+    unique: true,
+    dropDups: true
   },
-  // link is a required string
-  // todo save summary paragraph instead of link
-  link: {
+  //Link is a required string
+  link: 
+  {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
-  // Saves array of notes.
-  notes: [{
+  image: {
+    type: String,
+    required: false
+  },
+  summary: {
+    type: String,
+    default: "No Summary Available"
+  },
+  saved: {
+    type: Boolean,
+    default: false
+  },
+  note: [{
+    //Store ObjectIds in the array
     type: Schema.Types.ObjectId,
+    //The ObjectIds will refer to the ids in the Note model
     ref: "Note"
   }]
 });
 
-// Create the Article model with the ArticleSchema
+//Create the Article model with the ArticleSchema
 var Article = mongoose.model("Article", ArticleSchema);
 
-// Export the model
+//Export the model
 module.exports = Article;

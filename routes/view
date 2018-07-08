@@ -1,7 +1,0 @@
-var express = require('express');
-var router  = express.Router();
-
-var headline = require('../controllers/headline');
-router.get('/', headline.home);
-
-module.exports = router;

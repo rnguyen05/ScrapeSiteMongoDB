@@ -1,16 +1,23 @@
-// require mongoose
-var mongoose = require('mongoose');
+//Require mongoose
+const mongoose = require('mongoose');
 
-
-// Set mongoose to leverage built in JavaScript ES6 Promises
+//Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
+//local database connection
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapewired";
+mongoose.connect(MONGODB_URI
+  //   , {
+  //   useMongoClient: true
+  // }
+  );
 
-// mongoose.connect('mongodb://heroku_s83s967g:dpumr23t35v43ogmif26fhrph5@ds113660.mlab.com:13660/heroku_s83s967g');
 
-var db = mongoose.connection;
+// mongoose.connect('mongodb://heroku_82cw7xkr:sbq98ufe25nk8bhjeff7h0ab03@ds129801.mlab.com:29801/heroku_82cw7xkr');
 
-// Show any mongoose errors
+const db = mongoose.connection;
+
+//Show any mongoose errors
 db.on("error", function(error) 
 {
   console.log("Mongoose Error: ", error);
@@ -22,5 +29,5 @@ db.once("open", function()
   console.log("Mongoose connection successful!");
 });
 
-// export the database
+//Export the database
 module.exports = db;

@@ -1,0 +1,36 @@
+
+
+{{> nav}}
+
+<div class="container mt-5">
+    <div class="container">
+      {{#each articles}}
+        <div class="col-12 alert alert-secondary" id="navbar-shadow">
+            <h4>{{this.title}}</h4>
+        
+            <div class="row ml-auto"> 
+                <form action="/delete/{{this.id}}?_method=DELETE" method="POST">
+                    <input id="article-title" type="hidden" name="title" value="{{this.title}}">
+                    <input id="article-link" type="hidden" name="link" value={{this.link}}>
+                    <button type="submit" class="btn btn-outline-dark mr-4 my-2">
+                        <a class="nav-link">
+                            <span class="navItem"><i class="far fa-save fa-lg"></i>  Delete Article</span> 
+                        </a>
+                    </button>
+                </form>
+                <button id="modalbutton" type="submit" class="btn btn-outline-dark mr-4 my-2" data-toggle="modal" data-id={{this.id}} data-target="#myModal">
+                        <a class="nav-link">
+                            <span class="navItem"><i class="far fa-sticky-note fa-lg"></i>  Article Notes</span> 
+                        </a>
+                </button>
+                <button type="submit" class="btn btn-outline-dark mr-4 my-2">
+                        <a class="nav-link" href={{this.link}} target="_blank">
+                            <span class="navItem"><i class="far fa-newspaper fa-lg"></i>  Read Details</span> 
+                        </a>
+                </button>
+            </div>      
+        </div>
+      {{/each}}
+    </div>
+</div>
+

@@ -1,0 +1,41 @@
+body {
+	background-color: #F0F8FF;
+}
+
+#navbar-shadow {
+	-webkit-box-shadow: 0px 2px 2px gray;
+	-moz-box-shadow:    0px 2px 2px gray;
+	box-shadow:         0px 2px 2px gray;
+	z-index:999;
+}
+
+.logo {
+    font-family: 'Anton', sans-serif;
+    color: black;
+    font-size: 27pt !important;
+}
+
+.logo:hover {
+	font-family: 'Anton', sans-serif;
+    color: gray;
+    font-size: 27pt !important;
+}
+
+.navItem {
+	color: black;
+}
+
+.navItem:hover {
+	color: white;
+}
+
+.imageSize {
+	width: 250px;
+	height: 250px;
+	border-radius: 4px;
+	border: 1px solid gray;
+}
+
+.divider {
+	border-bottom: 1pt solid gray;
+}

@@ -1,0 +1,40 @@
+ 
+{{> nav }} 
+
+
+<div class="container mt-5">
+    <div class="container">
+      {{#each articles}}
+            <div class="alert alert-secondary" id="navbar-shadow">
+                <div class="row ml-1 my-1 divider "><h3>{{this.title}}</h3></div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-3 mr-3"><img class="imageSize" src="{{this.image}}"></div>
+                    <div class="col-12 col-md-8">
+                        <div class="row"><p>{{this.summary}}</p></div>
+                        <div class="row">
+                            <form action="/save" method="POST">
+                                <input id="article-title" type="hidden" name="title" value="{{this.title}}">
+                                <input id="article-link" type="hidden" name="link" value={{this.link}}>
+                                <button type="submit" class="btn btn-outline-dark mr-4 my-2">
+                                    <a class="nav-link">
+                                        <span class="navItem"><i class="far fa-save fa-lg"></i>  Save Articles</span> 
+                                    </a>
+                                </button>
+                            </form>
+                            <button type="submit" class="btn btn-outline-dark mr-4 my-2">
+                                    <a class="nav-link">
+                                        <span class="navItem"><i class="far fa-sticky-note fa-lg"></i>  Add Note</span> 
+                                    </a>
+                            </button>
+                            <button type="submit" class="btn btn-outline-dark mr-4 my-2">
+                                    <a class="nav-link" href={{this.link}} target="_blank">
+                                        <span class="navItem"><i class="far fa-newspaper fa-lg"></i>  Read Details</span> 
+                                    </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      {{/each}}
+    </div>
+</div>
