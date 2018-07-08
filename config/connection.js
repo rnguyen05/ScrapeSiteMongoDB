@@ -5,15 +5,15 @@ const mongoose = require('mongoose');
 mongoose.Promise = Promise;
 
 //local database connection
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapewired";
-mongoose.connect(MONGODB_URI
-  //   , {
-  //   useMongoClient: true
-  // }
-  );
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapewired";
+// mongoose.connect(MONGODB_URI
+//   //   , {
+//   //   useMongoClient: true
+//   // }
+//   );
 
 
-// mongoose.connect('mongodb://heroku_82cw7xkr:sbq98ufe25nk8bhjeff7h0ab03@ds129801.mlab.com:29801/heroku_82cw7xkr');
+mongoose.connect('mongodb://heroku_82cw7xkr:sbq98ufe25nk8bhjeff7h0ab03@ds129801.mlab.com:29801/heroku_82cw7xkr');
 
 const db = mongoose.connection;
 
