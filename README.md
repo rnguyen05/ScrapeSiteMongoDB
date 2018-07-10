@@ -1,22 +1,22 @@
-# Scrape News Web Site with MongoDB
+## Scrape News Web Site with MongoDB
 This app will scrape news from news website (wired.com). It scrapes 10 latest news on every "Scrape" button click.
 It uses Cheerio to grab the site content and Mongoose to save it to MongoDB database.
 Users can save interested article, add, delete notes and view article details on original news source.
 
-* NPM Packages used: 
-Express
-Express-handlebars
-Mongoose
-Body-parser
-Cheerio
-Request
-Heroku
-mLabMongoDB
+## NPM Packages used: 
+* Express
+* Express-handlebars
+* Mongoose
+* Body-parser
+* Cheerio
+* Request
+* Heroku
+* mLabMongoDB
 
-* Live Demo
+## Live Demo
 https://scrapesitemongodb.herokuapp.com/
 
-* Screenshots
+## Screenshots
 
 ![Image of Home Page](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/home.jpg?raw=true)
 
