@@ -22,4 +22,4 @@ https://scrapesitemongodb.herokuapp.com/
 
 ![Image of Saved Articles](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/savedArticles.jpg?raw=true)
 
-![Image of Notes](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/notes.jpg?raw=true)
+![Image of Notes](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/note.jpg?raw=true)
