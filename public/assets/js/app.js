@@ -79,46 +79,47 @@ $(document).ready(function ()
             method: "GET",
             url: "/getNote/" + articleId
         }).done(function (data){
-            $("#notes").append("<p id='actualnotes'></p>");
+            $("#notes").append("<p id='note'></p>");
             if (data.note.length > 0) {
-                $("#actualnotes").append("<ul id='notelist'>");
+                $("#note").append("<ul id='notelist'>");
                 for (var i = 0; i < data.note.length; i++) {
                     $('#notelist').append("<li id='" + data.note[i]._id + "'>" + "<strong>" + data.note[i].title + ": </strong>" + data.note[i].body + " " +
                     "<button data-id='" + data.note[i]._id +
                     "' class='deleteNote'>Delete</button></li>");
                 }
-                $('#actualnotes').append("</ul>");
+                $('#note').append("</ul>");
             } else {
-                $('#actualnotes').text("There aren't any notes yet.");
+                $('#note').text("There aren't any notes yet.");
             }
+            console.log(data);
         });
     });
 
 
-    // //JQuery to delete note 
-    // $(".deleteNote").on("click", function () {
-    //     //$("#notes").empty();
-    //     let noteId = $(this).attr("data-id");
-    //     console.log("delete noteId", noteId);
-    //     alert("delete button clicked");
-    //     // $.ajax({
-    //     //     method: "POST",
-    //     //     url: "/deleteNote/" + articleId
-    //     // }).done(function (data){
-    //     //     console.log("????data.note???", data.note);
-    //     //     $("#notes").append("<p id='actualnotes'></p>");
-    //     //     if (data.note.length > 0) {
-    //     //         $("#actualnotes").append("<ul id='notelist'>");
-    //     //         for (var i = 0; i < data.note.length; i++) {
-    //     //             $('#notelist').append("<li id='" + data.note[i]._id + "'>" + data.note[i].body + " " +
-    //     //             "<button data-id='" + data.note[i]._id +
-    //     //             "' id='deletenote'>Delete</button></li>");
-    //     //         }
-    //     //         $('#actualnotes').append("</ul>");
-    //     //     } else {
-    //     //         $('#actualnotes').text("There aren't any notes yet.");
-    //     //     }
-    //     // });
-    // });
+    //JQuery to delete note 
+    $(".deleteNote").on("click", function () {
+        //$("#notes").empty();
+        let noteId = $(this).attr("data-id");
+        console.log("delete noteId", noteId);
+        alert("delete button clicked");
+        // $.ajax({
+        //     method: "POST",
+        //     url: "/deleteNote/" + articleId
+        // }).done(function (data){
+        //     console.log("????data.note???", data.note);
+        //     $("#notes").append("<p id='actualnotes'></p>");
+        //     if (data.note.length > 0) {
+        //         $("#actualnotes").append("<ul id='notelist'>");
+        //         for (var i = 0; i < data.note.length; i++) {
+        //             $('#notelist').append("<li id='" + data.note[i]._id + "'>" + data.note[i].body + " " +
+        //             "<button data-id='" + data.note[i]._id +
+        //             "' id='deletenote'>Delete</button></li>");
+        //         }
+        //         $('#actualnotes').append("</ul>");
+        //     } else {
+        //         $('#actualnotes').text("There aren't any notes yet.");
+        //     }
+        // });
+    });
 
 })

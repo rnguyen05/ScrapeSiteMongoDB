@@ -14,6 +14,12 @@
         <div class="container">
             {{!-- Display notes --}}
             <div id="notes"></div>
+            {{!-- <div id="note">
+              {{#each articles.note}}
+                  <span>Note Id: {{note._id}}: {{note.title}}: {{note.body}}</span>
+              {{/each}}
+            </div> --}}
+
             <form id="noteForm">
                 <div class="input-group mb-3">
                     <input data-id={{_id}} type="text" class="form-control noteTitle" placeholder="Your Name" aria-label="Your Name" aria-describedby="basic-addon1" required>

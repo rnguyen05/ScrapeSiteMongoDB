@@ -96,7 +96,7 @@ exports.deleteNote = function(req,res){
             res.send(err);
         }
         else{
-            db.Article.findByIdAndUpdate({_id: articleId},{$set:{notes:""}},{new:false})
+            db.Article.findByIdAndUpdate({_id: articleId},{$set:{note:""}},{new:false})
             .exec(function(err){
                 if(err){
                     console.log(err);

@@ -33,7 +33,7 @@ router.get('/getNote/:id', headline.getNote);
 router.post("/addNote/:id", headline.addNote);
 
 //Delete Note Route
-router.post('/deleteNote/:noteId', headline.deleteNote);
+router.get('/deleteNote/:noteId', headline.deleteNote);
 
 
 
