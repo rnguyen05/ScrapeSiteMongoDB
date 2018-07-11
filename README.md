@@ -16,8 +16,10 @@ Users can save interested article, add, delete notes and view article details on
 ## Live Demo
 https://scrapesitemongodb.herokuapp.com/
 
-## Screenshots
+## Video Demo
+[![IMAGE ALT TEXT HERE](https://i9.ytimg.com/vi/QdaIMjgHgQg/mq2.jpg?sqp=CLDGl9oF&rs=AOn4CLCp8TBZsXsrpL-oWxGBSUbWd0V9eg)](https://www.youtube.com/watch?v=QdaIMjgHgQg)
 
+## Screenshots
 ![Image of Home Page](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/home.jpg?raw=true)
 
 ![Image of Saved Articles](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/savedArticles.jpg?raw=true)
@@ -26,4 +28,4 @@ https://scrapesitemongodb.herokuapp.com/
 
 ![Image of Notes](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/noteAdded.jpg?raw=true)
 
-[![IMAGE ALT TEXT HERE](https://i9.ytimg.com/vi/QdaIMjgHgQg/mq2.jpg?sqp=CLDGl9oF&rs=AOn4CLCp8TBZsXsrpL-oWxGBSUbWd0V9eg)](https://www.youtube.com/watch?v=QdaIMjgHgQg)
+
