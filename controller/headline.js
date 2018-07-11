@@ -9,7 +9,7 @@ exports.index = function (req, res) {
 		//Check for error getting articles
         if (error) console.log("Error Getting Articles ", error);
         res.render('index', { title: "News Scraper", articles: data });	
-    });//.sort({"title":-1});
+    }).sort({"createdAt":-1});
 }; 
 
 //Save Article by flipping saved boolean flag to true
@@ -49,7 +49,6 @@ exports.unsaveArticle = function (req, res) {
     res.render('savedArticles');
 };
 
-
 //Render all Saved Articles in database
 exports.savedArticles = function (req, res) {
 	//Get all the articles
@@ -60,10 +59,9 @@ exports.savedArticles = function (req, res) {
             return handleError(err);
         }
         res.render('savedArticles', { title: "News Scraper", articles: data });	
-    });//.sort({"title":-1});
+    }).sort({"createdAt":-1});
 }; 
     
-
 //Get Article by flipping saved boolean flag to true
 exports.getArticle = function (req, res) {
     let articleId = req.params.id;
@@ -78,42 +76,32 @@ exports.getArticle = function (req, res) {
     });
 };
 
-
-/////////// Note controllers below ///////////////////
-
-
-
-
-
+//Delete Note
 exports.deleteNote = function(req,res){
+    console.log(req.params);
     let noteId = req.params.noteId;
-    let ArticleId = req.params.articleId;
+    let articleId = req.params.articleId;
     console.log("noteId",noteId);
     console.log("articleId",articleId);
-    db.Note.findByIdAndRemove({_id:noteId},function(err){
+    db.Note.findByIdAndRemove({_id:noteId},function(err, result){
         if(err){
             console.log(err);
             res.send(err);
-        }
-        else{
-            db.Article.findByIdAndUpdate({_id: articleId},{$set:{note:""}},{new:false})
-            .exec(function(err){
-                if(err){
+        } else {
+            db.Article.findByIdAndUpdate({_id: articleId}, {$pull: {note: noteId}}, {safe: true, upsert: true},
+            function (err, result) {
+                if (err) {
                     console.log(err);
-                    res.send(err);
-                }else{
-                    res.send();
                 }
-            });
+                res.send("successfully removed note");
+            })
         }
     });
 };
 
-
 //Get Note by Id
 exports.getNote = function (req, res) {
     let articleId = req.params.id
-    console.log(">>>>>>>>headline articleId",articleId);
     db.Article.findOne({ _id: articleId })
     .populate("note")
     .then(function (data) {
@@ -121,24 +109,31 @@ exports.getNote = function (req, res) {
     });
 };
 
-
-//Add Note Route
+//Add Note
 exports.addNote = function (req, res) {
-    let id = req.params.id;
+    let id = req.params.articleId;
     let title = req.body.title;
     let body = req.body.body;
     
     let note = {
         title: title,
         body: body,
-        headline: id
+        article: id
     };
     db.Note.create(note)
     .then(function(dbNote) {
-      return db.Article.findByIdAndUpdate({ _id: id }, {$push: {note: {_id:dbNote._id,title:dbNote.title,body:dbNote.body,headline: dbNote.headline} }});
+        return db.Article.findByIdAndUpdate({ _id: id }, 
+            {$push: { 
+                note: {
+                    _id: dbNote._id,
+                    title: dbNote.title,
+                    body: dbNote.body,
+                    article: dbNote.article
+                } 
+            }
+        });
     })
     .then(function(note) {
-        console.log("notes???", note);
       res.json(note);
     })
     .catch(function(err) {

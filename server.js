@@ -10,8 +10,6 @@ const routes = require('./routes/routes');
 // Initialize Express
 const app = express();
 
-
-
 // set up the HBS view engine
 app.engine('handlebars', handlebars({defaultLayout: 'main', extname: 'handlebars', partialsDir: [__dirname + '/views/partials']}));
 app.set('view engine', 'handlebars');
@@ -32,11 +30,8 @@ app.use(express.static('public'));
 // Import routes
 app.use('/', routes);
 
-
-
 // Launch App
 const port = process.env.PORT || 3000;
-
 
 app.listen(port, function()
 {

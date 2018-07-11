@@ -14,26 +14,9 @@
         <div class="container">
             {{!-- Display notes --}}
             <div id="notes"></div>
-            {{!-- <div id="note">
-              {{#each articles.note}}
-                  <span>Note Id: {{note._id}}: {{note.title}}: {{note.body}}</span>
-              {{/each}}
-            </div> --}}
-
-            <form id="noteForm">
-                <div class="input-group mb-3">
-                    <input data-id={{_id}} type="text" class="form-control noteTitle" placeholder="Your Name" aria-label="Your Name" aria-describedby="basic-addon1" required>
-                </div>
-                <div class="input-group">
-                    <textarea data-id={{_id}} class="form-control noteBody" placeholder="Note" aria-label="Body" required></textarea>
-                </div>
-            </form>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-secondary saveNoteBtn">Save Note</button>
-      </div>
+     </div> 
     </div>
   </div>
 </div>
