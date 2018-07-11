@@ -36,6 +36,10 @@ var ArticleSchema = new Schema({
     type: Boolean,
     default: false
   },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
   note: [{
     //Store ObjectIds in the array
     type: Schema.Types.ObjectId,

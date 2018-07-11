@@ -5,9 +5,9 @@ const mongoose = require('mongoose');
 mongoose.Promise = Promise;
 
 //local database connection
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapewired";
-// mongoose.connect(MONGODB_URI
-//   );
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapewired";
+mongoose.connect(MONGODB_URI
+  );
 
 // mongoose.connect("mongodb://localhost/scrapewired");
 
