@@ -22,4 +22,8 @@ https://scrapesitemongodb.herokuapp.com/
 
 ![Image of Saved Articles](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/savedArticles.jpg?raw=true)
 
-![Image of Notes](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/note.jpg?raw=true)
+![Image of Notes](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/addNote.jpg?raw=true)
+
+![Image of Notes](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/noteAdded.jpg?raw=true)
+
+[![IMAGE ALT TEXT HERE](https://i9.ytimg.com/vi/QdaIMjgHgQg/mq2.jpg?sqp=CLDGl9oF&rs=AOn4CLCp8TBZsXsrpL-oWxGBSUbWd0V9eg)](https://www.youtube.com/watch?v=QdaIMjgHgQg)
