@@ -17,7 +17,7 @@ Users can save interested article, add, delete notes and view article details on
 https://scrapesitemongodb.herokuapp.com/
 
 ## Video Demo
-![(http://i3.ytimg.com/vi/QdaIMjgHgQg/hqdefault.jpg)]
+![Image](http://i3.ytimg.com/vi/QdaIMjgHgQg/hqdefault.jpg)
 
 https://www.youtube.com/watch?v=QdaIMjgHgQg
 
