@@ -19,7 +19,7 @@ https://scrapesitemongodb.herokuapp.com/
 ## Video Demo
 ![Image](http://i3.ytimg.com/vi/QdaIMjgHgQg/hqdefault.jpg)
 
-https://www.youtube.com/watch?v=QdaIMjgHgQg
+https://youtu.be/QdaIMjgHgQg
 
 ## Screenshots
 ![Image of Home Page](https://github.com/rnguyen05/ScrapeSiteMongoDB/blob/master/screenshots/home.jpg?raw=true)
